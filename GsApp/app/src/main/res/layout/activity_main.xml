@@ -1,16 +1,41 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
-
-    <ImageView
-        android:id="@+id/imageview"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/sample01"
-        android:scaleType="centerCrop"
-        android:contentDescription="画像の説明"
-        />
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize" />
+    <fragment
+        android:id="@+id/fragment"
+        android:name="com.gashfara.mogi.gsapp.MainActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_main" />
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+    ButterKnife.bind(this);
+
+    setSupportActionBar(_toolbar);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    Bundle savedInstanceState) {
+    View view = inflater.inflate(R.layout.fragment_main, container, false);
+    ButterKnife.bind(this, view);
+
+    _tabLayout.addTab(_tabLayout.newTab().setText("tab1"));
+    _tabLayout.addTab(_tabLayout.newTab().setText("tab2"));
+    _tabLayout.addTab(_tabLayout.newTab().setText("tab3"));
+
+    return view;
+    }
 </LinearLayout>
