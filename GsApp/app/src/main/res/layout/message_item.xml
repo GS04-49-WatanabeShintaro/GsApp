@@ -10,7 +10,8 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:scaleType="centerCrop"
-        android:id="@+id/image1"/>
+        android:id="@+id/image1"
+        android:background="#22f"/>
 
     <TextView
         android:layout_width="0dp"
@@ -18,5 +19,8 @@
         android:layout_weight="1"
         android:textAppearance="?android:textAppearanceLarge"
         tools:text="comment"
-        android:id="@+id/text1"/>
+        android:id="@+id/text1"
+        android:background="#22f"
+        android:textColor="#fff"/>
+
 </LinearLayout>

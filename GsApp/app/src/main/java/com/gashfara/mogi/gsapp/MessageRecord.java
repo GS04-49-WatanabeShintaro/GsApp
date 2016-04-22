@@ -12,10 +12,7 @@ public class MessageRecord {
         this.comment = comment;
     }
     //それぞれの項目を返す関数です。項目が増えたら増やしましょう。
-    public String getComment() {
-        return comment;
-    }
-    public String getImageUrl() {
-        return imageUrl;
-    }
+    public String getComment() { return comment; }
+    public String getImageUrl() { return imageUrl; }
+
 }
